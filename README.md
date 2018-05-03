@@ -22,7 +22,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
   once you clone the repository then do the following to install all the dependencies required to run the project.
 
-    npm i or npm install
+    yarn install
   
   After installing all the dependencies then the project folder structure looks like below
 
