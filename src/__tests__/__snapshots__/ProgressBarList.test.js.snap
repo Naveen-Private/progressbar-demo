@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBarList should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ProgressBarList
+    progressBars={
+        Array [
+            10,
+            20,
+            30,
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Array [
+    <ProgressBar
+      value={10}
+/>,
+    <ProgressBar
+      value={20}
+/>,
+    <ProgressBar
+      value={30}
+/>,
+  ],
+  Symbol(enzyme.__nodes__): Array [
+    Array [
+      <ProgressBar
+        value={10}
+/>,
+      <ProgressBar
+        value={20}
+/>,
+      <ProgressBar
+        value={30}
+/>,
+    ],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -4,7 +4,8 @@ import { shallow } from 'enzyme';
 
 // Components import
 import App from '../App';
-import ProgressBar from '../components/ProgressBar'
+import ProgressBarList from '../components/ProgressBarList'
+import ProgressBarButtons from '../components/ProgressBarButtons'
 import Button from '../components/Button'
 
 const mockData = {"buttons":[14,12,-37,-23],"bars":[13,80,17],"limit":190}
@@ -20,13 +21,24 @@ describe('App', () => {
     expect(data).toEqual(mockData);
   });
 
-  // ProgressBar component rendering in App - children
-  it('ProgressBar component should be defined', () => {
-    expect(ProgressBar).toBeDefined();
+  // ProgressBarList component rendering in App - children
+  it('ProgressBarList component should be defined', () => {
+    expect(ProgressBarList).toBeDefined();
   });
   it('ProgressBar should render correctly', () => {
     const tree = shallow(
-      <ProgressBar value='100' />
+      <ProgressBarList progressBars={[10, 20, 30]} />
+    );
+    expect(tree).toMatchSnapshot();
+  });
+
+  // ProgressBarButtons component rendering in App - children
+  it('ProgressBarButtons should be defined', () => {
+    expect(ProgressBarButtons).toBeDefined();
+  });
+  it('ProgressBarButtons should render correctly', () => {
+    const tree = shallow(
+      <ProgressBarButtons progressBarButtons={[10, 20, -30]} />
     );
     expect(tree).toMatchSnapshot();
   });
@@ -37,7 +49,7 @@ describe('App', () => {
   });
   it('Button should render correctly', () => {
     const tree = shallow(
-      <Button onClick='() => {console.log("click function")}'>12</Button>
+      <Button onClick='() => {console.log("some function")}'>12</Button>
     );
     expect(tree).toMatchSnapshot();
   });

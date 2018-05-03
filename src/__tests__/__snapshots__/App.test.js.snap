@@ -5,7 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Button
-    onClick="() => {console.log(\\"click function\\")}"
+    onClick="() => {console.log(\\"some function\\")}"
 >
     12
 </Button>,
@@ -56,8 +56,14 @@ exports[`App ProgressBar should render correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ProgressBar
-    value="100"
+  Symbol(enzyme.__unrendered__): <ProgressBarList
+    progressBars={
+        Array [
+            10,
+            20,
+            30,
+          ]
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -66,103 +72,101 @@ ShallowWrapper {
     "simulateEvent": [Function],
     "unmount": [Function],
   },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": Array [
-        <styled.div>
-          100
-          %
-</styled.div>,
-        <styled.div
-          width="100"
+  Symbol(enzyme.__node__): Array [
+    <ProgressBar
+      value={10}
 />,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            "100",
-            "%",
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "100",
-          "%",
-        ],
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "width": "100",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
+    <ProgressBar
+      value={20}
+/>,
+    <ProgressBar
+      value={30}
+/>,
+  ],
   Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
-          <styled.div>
-            100
-            %
-</styled.div>,
-          <styled.div
-            width="100"
+    Array [
+      <ProgressBar
+        value={10}
 />,
-        ],
+      <ProgressBar
+        value={20}
+/>,
+      <ProgressBar
+        value={30}
+/>,
+    ],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
       },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              "100",
-              "%",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "100",
-            "%",
-          ],
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "width": "100",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": [Function],
     },
+  },
+}
+`;
+
+exports[`App ProgressBarButtons should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ProgressBarButtons
+    progressBarButtons={
+        Array [
+            10,
+            20,
+            -30,
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Array [
+    <option
+      value={0}
+>
+      ProgressBar 
+      1
+</option>,
+    <option
+      value={1}
+>
+      ProgressBar 
+      2
+</option>,
+    <option
+      value={2}
+>
+      ProgressBar 
+      3
+</option>,
+  ],
+  Symbol(enzyme.__nodes__): Array [
+    Array [
+      <option
+        value={0}
+>
+        ProgressBar 
+        1
+</option>,
+      <option
+        value={1}
+>
+        ProgressBar 
+        2
+</option>,
+      <option
+        value={2}
+>
+        ProgressBar 
+        3
+</option>,
+    ],
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {

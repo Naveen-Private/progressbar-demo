@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBarButtons should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ProgressBarButtons
+    progressBarButtons={
+        Array [
+            10,
+            20,
+            -30,
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Array [
+    <option
+      value={0}
+>
+      ProgressBar 
+      1
+</option>,
+    <option
+      value={1}
+>
+      ProgressBar 
+      2
+</option>,
+    <option
+      value={2}
+>
+      ProgressBar 
+      3
+</option>,
+  ],
+  Symbol(enzyme.__nodes__): Array [
+    Array [
+      <option
+        value={0}
+>
+        ProgressBar 
+        1
+</option>,
+      <option
+        value={1}
+>
+        ProgressBar 
+        2
+</option>,
+      <option
+        value={2}
+>
+        ProgressBar 
+        3
+</option>,
+    ],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

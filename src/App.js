@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 // Components import
-import ProgressBar from './components/ProgressBar'
+import ProgressBarList from './components/ProgressBarList'
+import ProgressBarButtons from './components/ProgressBarButtons'
 import Button from './components/Button'
 
 // Styles
@@ -41,7 +42,7 @@ const Container = styled.div`
 `
 
 const Title = styled.div`
-  display: ${props => props.display ? 'none' : 'block'};
+  display: ${props => props.isLoading ? 'none' : 'block'};
   font-size: 21px;
   margin-bottom: 18px;
   margin-top: 18px;
@@ -71,7 +72,7 @@ const ButtonWrap = styled.div`
 `
 
 const DropDown = styled.select`
-  display: ${props => props.display ? 'none' : 'block'};
+  display: ${props => props.isLoading ? 'none' : 'block'};
   height: 38px;
   width: 150px;
   padding: 5px;
@@ -140,22 +141,22 @@ class App extends Component {
     return (
       <Wraper isLoading={this.state.isLoading}>
         <Container isLoading={this.state.isLoading}>
-          <Title display={this.state.isLoading}>Progress Bar Demo</Title>
+          <Title isLoading={this.state.isLoading}>Progress Bar Demo</Title>
           {
-            this.state.progressBars.map((progressBar, index) =>
-              <ProgressBar key={index} value={progressBar} />
-          )}
+            // Component to display the list of ProgressBars
+          }
+          <ProgressBarList progressBars={this.state.progressBars} />
           <ButtonContainer>
-            <DropDown display={this.state.isLoading} onChange={(e) => this.changeDropDownValue(e)}>
+            <DropDown isLoading={this.state.isLoading} onChange={(e) => this.changeDropDownValue(e)}>
               {
-                this.state.progressBars.map((progressBar, index) =>
-                <option key={index} value={index}>ProgressBar {index+1}</option>
-              )}
+                // Component to show the ProgressBar buttons dropdown
+              }
+              <ProgressBarButtons progressBarButtons={this.state.progressBars} />
             </DropDown>
             <ButtonWrap>
               {
                 this.state.buttonValues.map((buttonvalue, index) => 
-                <Button key={index} updateProgressBar={(e) => this.updateProgressBar(e, buttonvalue)} btnText={buttonvalue} />
+                <Button btnSelected={this.state.btnSelected} key={index} updateProgressBar={(e) => this.updateProgressBar(e, buttonvalue)} btnText={buttonvalue} />
               )}
             </ButtonWrap>
           </ButtonContainer>
