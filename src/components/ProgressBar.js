@@ -20,6 +20,9 @@ const Progress = styled.div`
     justify-content: center;
     align-items: center;
     width: ${props => props.width || 0}%;
+    transition-property: width;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
     height: inherit;
     background-color: ${props => props.width > 100 ? 'red' : 'green'};
 `
